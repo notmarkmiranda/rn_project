@@ -31,9 +31,9 @@ const loginUserSuccess = (dispatch, user) => {
     payload: user
   })
 
-  const nav = NavigationActions.navigate({
-    routeName: 'Dashboard',
-    action: NavigationActions.navigate({ routeName: 'Dashboard' })
+  const nav = NavigationActions.reset({
+    index: 0,
+    actions: [NavigationActions.navigate({ routeName: 'DashboardStack' })]
   })
 
   dispatch(nav)

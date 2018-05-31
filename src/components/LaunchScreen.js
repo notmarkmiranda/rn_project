@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import { Text, View, Button } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
-import NavigationActions from 'react-navigation'
+import { NavigationActions } from 'react-navigation'
 
 import { OutlinedButton } from './common'
 
 class LaunchScreen extends Component {
+  navigateTo = (route) => {
+    const navigate = NavigationActions.navigate({ routeName: route })
+    this.props.navigation.dispatch(navigate)
+  }
+
   render () {
     const { container, buttonBox } = styles
 
@@ -18,16 +23,16 @@ class LaunchScreen extends Component {
         />
         <View style={buttonBox}>
           <OutlinedButton
-            onPress={() => this.props.navigation.navigate('SignIn')}
+            onPress={() => this.navigateTo('SignIn')}
             overrideColor='black'
           >
             SIGN IN
           </OutlinedButton>
           <OutlinedButton
-            onPress={() => this.props.navigation.navigate('SignUp')}
+            onPress={() => this.navigateTo('SignUp')}
             overrideColor='red'
           >
-              SIGN UP
+            SIGN UP
           </OutlinedButton>
         </View>
       </View>
