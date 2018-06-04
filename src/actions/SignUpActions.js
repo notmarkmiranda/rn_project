@@ -33,7 +33,7 @@ const loginUserSuccess = (dispatch, user) => {
 
   const nav = NavigationActions.reset({
     index: 0,
-    actions: [NavigationActions.navigate({ routeName: 'DashboardStack' })]
+    actions: [NavigationActions.navigate({ routeName: 'Dashboard' })]
   })
 
   dispatch(nav)
